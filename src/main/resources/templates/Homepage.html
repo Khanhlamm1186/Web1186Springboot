@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://scontent.xx.fbcdn.net/v/t1.15752-9/329760136_495322139346198_6412973535947348003_n.png?stp=cp0_dst-png&_nc_cat=102&ccb=1-7&_nc_sid=aee45a&_nc_ohc=N7Wb25Hw448AX_ZX_Fe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQELbUniDrEixWoqLM2_y88OwVGquT--EW7YAStAaZyCg&oe=640D48A7">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Web bán điện thoại</title>
+    <style>
+        .imglaptop{
+            height:150px;
+        }
+        .imgg{
+            width:50px;
+            border-radius: 50%;
+        }
+        .container{
+
+        }
+        #flex-container{
+            padding:50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        p{
+            text-align: center;
+        }
+        .flex-item{
+            display: flex;
+            border: solid 1px rgb(122, 119, 119);
+            padding:20px;
+            width: 260px;
+            height:400px;
+            background-color: rgb(255, 255, 255);
+            flex-direction: column;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            border-radius: 3px;
+            box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+            cursor: pointer;
+        }
+        flex-item:hover{
+            box-shadow: 0px 0px 0px rgba(150, 10, 10, 0.5);
+        }
+                .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+          }
+
+          .mySlides {
+            display: none;
+          }
+
+          .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+          }
+
+          .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: #888;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+          }
+
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
+
+          .prev:hover, .next:hover {
+            color: #f2f2f2;
+            background-color: rgba(0,0,0,0.8);
+          }
+
+          .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
+
+          .active, .dot:hover {
+            background-color: #717171;
+          }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img class="imgg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1pz5ZgwlXvSlLrii9PqgueTRhXW1GZJgnyg&usqp=CAU"/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">List Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Login">Login admin</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <input id="searchTerm" class="form-control me-2" placeholder="Search" >
+                <button onclick="search()" class="btn btn-outline-success" >Search</button>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="slideshow-container">
+    <div class="mySlides">
+        <img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/412/posts/28308/image/12-artistic-parallax.jpg" style="width:100%">
+        <div class="text">slide show 1</div>
+    </div>
+
+    <div class="mySlides">
+        <img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/412/posts/28308/image/14-urban-opener.jpg" style="width:100%">
+        <div class="text">slide show 2</div>
+    </div>
+
+    <div class="mySlides">
+        <img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/412/posts/28308/image/8-slideshow.jpg" style="width:100%">
+        <div class="text">slide show 3</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<div class="container">
+    <div id="flex-container"></div>
+</div>
+
+<footer class="text-center text-white mt-4" style="background-color: #607D8B">
+
+    <hr class="text-dark">
+
+    <div class="container">
+        <!-- Section: Social media -->
+        <section class="mb-3">
+
+            <!-- Facebook -->
+            <a class="btn-link btn-floating btn-lg text-white" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+
+            <!-- Twitter -->
+            <a class="btn-link btn-floating btn-lg text-white" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+
+            <!-- Google -->
+            <a class="btn-link btn-floating btn-lg text-white" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
+
+            <!-- Instagram -->
+            <a class="btn-link btn-floating btn-lg text-white" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+
+            <!-- YouTube -->
+            <a class="btn-link btn-floating btn-lg text-white" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-youtube"></i></a>
+            <!-- Github -->
+            <a class="btn-link btn-floating btn-lg text-white" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); text-color: #E0E0E0">
+        <a class="text-white" href="https://www.facebook.com/profile.php?id=100068975899945">1186Store</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+</div>
+<script>
+    const API_URL = "https://63e1d6414324b12d963f5108.mockapi.io/api/v11/laptop";
+const productList = document.getElementById("flex-container");
+fetch(API_URL)
+  .then(response => response.json())
+  .then(data => {
+    // Xử lý dữ liệu trả về
+    data.forEach(product => {
+      const productElement = document.createElement("div");
+      productElement.innerHTML = `
+      <div class="flex-item">
+      <img class="imglaptop" src=${product.image} alt="laptop">
+        <p>${product.name}</p>
+        <p>Giá: ${product.price}</p>
+
+        <button onclick="hienThiCt(${product.id})" class="btn btn-primary" >Chi Tiết Sản Phẩm</button>
+        <button onclick="hienThiCt(${product.id})" class="btn btn-success">Mua Ngay</button>
+      </div>
+      `;
+      productList.appendChild(productElement);
+    });
+  })
+
+ function search(){
+    productList.innerHTML = '';
+    var keyWork = document.getElementById("searchTerm").value;
+    var keyWork = keyWork.toLowerCase();
+    fetch(API_URL)
+  .then(response => response.json())
+  .then(products => {
+    products.forEach(product => {
+      if (product.name.toLowerCase().includes(keyWork)) {
+        const productElement = document.createElement("div");
+      productElement.innerHTML = `
+      <div class="flex-item">
+      <img class="imglaptop" src=${product.image} alt="laptop">
+        <p>${product.name}</p>
+        <p>Giá: ${product.price}</p>
+
+        <button onclick="hienThiCt(${product.id})" class="btn btn-primary" >Chi Tiết Sản Phẩm</button>
+        <button onclick="hienThiCt(${product.id})" class="btn btn-success">Mua Ngay</button>
+      </div>
+      `;
+
+      productList.appendChild(productElement);
+      }
+    });
+  })
+  .catch(error => console.error(error));
+ }
+
+  function hienThiCt(id){
+    window.location.href="/Detail"+'/'+id;
+  }
+          var slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+            }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+         }
+</script>
+</body>
+</html>

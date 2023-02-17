@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://scontent.xx.fbcdn.net/v/t1.15752-9/329760136_495322139346198_6412973535947348003_n.png?stp=cp0_dst-png&_nc_cat=102&ccb=1-7&_nc_sid=aee45a&_nc_ohc=N7Wb25Hw448AX_ZX_Fe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQELbUniDrEixWoqLM2_y88OwVGquT--EW7YAStAaZyCg&oe=640D48A7">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300;400&family=Merriweather:ital@1&family=Roboto&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        body{
+            font-family: 'Anek Malayalam', sans-serif;
+            background-color: rgb(213, 224, 234);
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .btn {
+            width: 200px;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(78, 31, 31);
+            cursor: pointer;
+            margin: 20px;
+            height: 55px;
+            text-align:center;
+            border: none;
+            background-size: 300% 100%;
+            border-radius: 50px;
+            moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+            background-color: aqua;
+            z-index: 2;
+        }
+        .btn:hover{
+            background-color: blue;
+            cursor: pointer;
+        }
+        .black{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .container{
+            box-sizing: border-box;
+            position:relative;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 1;
+            padding-bottom: 500px;
+            padding-top: 100px;
+        }
+        .flex-container{
+            display: flex;
+            justify-content: center;
+        }
+        #formlogin{
+            background-color: rgb(248, 250, 252);
+            width: 400px;
+            border-radius: 5px;
+            padding:10px;
+            z-index: 2;
+        }
+        #demo,#demo0{
+            margin-block-end: 0px;
+            margin-block-start: 0px;
+        }
+        #formlogin > h2{
+            text-align: center;
+        }
+
+        .btx{
+            float:right;
+            border:solid 0px black;
+            background-color: rgb(198, 223, 239);
+            cursor: pointer;
+            width:25px;
+            opacity:0.7;
+        }
+        input{
+            padding:12px 20px 12px 70px;
+            margin-left: 33px;
+            margin-bottom: 10px;
+        }
+        i{
+            margin-left: -310px;
+        }
+        .lg{
+            margin-top: 1px;
+            padding:10px;
+            background-color: rgb(86, 199, 113);
+            border-radius: 5px;
+            border:solid 1px rgb(86, 199, 113);
+            color:white;
+            width: 330px;
+            margin-left: 33px;
+            cursor: pointer;
+        }
+        #formlogin{
+            visibility:visible;
+        }
+        #fogot{
+            width: 100%;
+            height:50px;
+            cursor: pointer;
+            background-color: white;
+        }
+        p{
+            margin-left: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="black">
+
+    </div>
+    <div class="flex-container">
+        <button id="show" class="btn" onclick="Loginnow()">Đăng nhập hệ thống</button>
+    </div>
+    <div class="flex-container">
+
+        <div id="formlogin" class="flex-item">
+            <button id="hide" class="btx">X</button>
+            <h2 id="title">Member Login</h2>
+            <div>
+                <input type="text"  placeholder="Username" name="username" id="username"><i class="ti-user"></i>
+                <p style="font-size:16px;color:red" id="demo0"></p>
+            </div>
+            <div>
+                <input type="password"  placeholder="Password" id="password"><i class="ti-lock"></i>
+                <p style="font-size:16px;color:red" id="demo"></p>
+            </div>
+            <div>
+                <button id="loginn" class="lg" onclick="Login()"> LOGIN </button><br>
+            </div>
+            <div>
+                <button style="border:solid 1px white" id="fogot" onclick="Forgot()"> Forgot Password </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+</body>
+<script src="/js/laptop1.js"></script>
+</html>
