@@ -68,6 +68,15 @@
             z-index: 2;
             color:yellow;
         }
+        #formOnline{
+            background-color: gray;
+            width: 450px;
+            border-radius: 5px;
+            margin-top:-500px;
+            padding:10px;
+            z-index: 2;
+            color:yellow;
+        }
 
         #btm {
             text-align:center;
@@ -80,6 +89,9 @@
             margin-block-start: 0px;
         }
         #formlogin > h2{
+            text-align: center;
+        }
+        #formOnline > h3{
             text-align: center;
         }
 
@@ -114,6 +126,10 @@
             visibility:hidden;
             z-index:2;
         }
+        #formOnline{
+            visibility:hidden;
+            z-index:2;
+        }
         #fogot{
             width: 100%;
             height:50px;
@@ -123,6 +139,9 @@
         p{
             margin-left: 50px;
         }
+        img {
+            height:50px;
+        }
     </style>
 </head>
 <body>
@@ -131,6 +150,7 @@
 <div id="productDetails" class="container"></div>
 <div class="flex-container">
     <button id="show" class="btn" >Mua Ngay</button>
+    <button onclick="muaOnline" id="muaOnline" class="btn">Thanh Toán Online</button>
 </div>
 <div class="flex-container">
 
@@ -154,17 +174,50 @@
         </div>
     </div>
 </div>
+<div class="flex-container">
+
+    <div id="formOnline" class="flex-item">
+        <button id="hide1" class="btx">X</button>
+        <h3 id="title1">Xác Nhận Đơn Hàng</h3>
+        <div>
+            <img src="data:image/png;base64,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" alt="">
+            <p>MOMO: 0352391723 </p>
+            <p>Tên :Nguyễn Bá Duy Khánh</p>
+        </div>
+        <div>
+            <img src="data:image/jpeg;base64,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"/>
+            <p>MB Bank: 6590102038888 </p>
+            <p>Tên :Nguyễn Bá Duy Khánh</p>
+        </div>
+        <div>
+            <p> Nội dung ck: SDT + Mô tả sp + Địa chỉ nhận hàng</p>
+        </div>
+
+        <div>
+            <button type="submit" style="border:solid 1px white" class="btn" id="btm"  onclick="xacNhanCk()"> Xác Nhận Đã Chuyển Khoản </button>
+        </div>
+    </div>
+</div>
 
 <script>
         const showBtn = document.querySelector('#show')
         const hideBtn =document.querySelector('#hide')
+        const hideBtn1 =document.querySelector('#hide1')
+        const showstk = document.querySelector('#muaOnline')
         const div = document.querySelector('#formlogin')
+        const div1 = document.querySelector('#formOnline')
         var pass='admin';
         showBtn.addEventListener('click', () => {
         div.style.visibility = 'visible'
         })
         hideBtn.addEventListener('click', ()=> {
         div.style.visibility = 'hidden'
+        })
+        showstk.addEventListener('click', () => {
+        div1.style.visibility = 'visible'
+        })
+        hideBtn1.addEventListener('click', ()=> {
+        div1.style.visibility = 'hidden'
         })
   const path = window.location.pathname;
     const productId = path.split("/").pop();
@@ -219,6 +272,13 @@ function giaoHangDi(){
     submitForm();
     div.style.visibility = 'hidden';
     alert("Đặt Hàng Thành Công")
+}
+function muaOnline(){
+
+}
+function xacNhanCk(){
+ alert("Chúng tôi sẽ kiểm tra và xác nhận đơn hàng với bạn khi nhận được tiền");
+ div1.style.visibility = 'hidden';
 }
 
 

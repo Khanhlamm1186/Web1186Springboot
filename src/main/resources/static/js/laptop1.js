@@ -3,6 +3,14 @@
         const hideBtn =document.querySelector('#hide')
         const div = document.querySelector('#formlogin')
         var pass='admin';
+        const apiUrl = 'https://63f57e4755677ef68bceafed.mockapi.io/login/v11/weblaptop/2';
+        fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+            window.pass = data.passwork;
+          })
+          .catch(error => console.error(error));
+
         showBtn.addEventListener('click', () => {
         div.style.visibility = 'visible'
         document.getElementById('loginn').innerHTML="LOGIN";
