@@ -12,21 +12,31 @@ public class HomeController {
         //Trả về trang index.html (trang chủ)
         return "Homepage";
     }
+
     @GetMapping("/Helloword")
     public String homeHello() {
         //Trả về trang index.html (trang chủ)
         return "Helloword";
     }
+
     @GetMapping("/Login")
     public String Loginpage() {
         //Trả về trang index.html (trang chủ)
         return "Login";
     }
+
     @GetMapping("/CRUDadm2002")
     public String CRUDpage() {
         //Trả về trang index.html (trang chủ)
         return "CRUD";
     }
+
+    @GetMapping("/listSp")
+    public String listSpPage() {
+        //Trả về trang index.html (trang chủ)
+        return "dssanpham";
+    }
+
     @GetMapping("/Orderadmin1186")
     public String Orderpage() {
         //Trả về trang index.html (trang chủ)
@@ -39,7 +49,4 @@ public class HomeController {
 
         return "Detail";
     }
-
-
-    //Có thể tạo thêm mapping cho các endpoint khác tại đây
 }

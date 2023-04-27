@@ -142,13 +142,23 @@
         img {
             height:50px;
         }
+        @media only screen and (max-width: 600px) {
+                .btn{
+                    width:90%;
+                }
+                #2btn{
+                    display: flex;
+                    flex-direction: column;
+                    flex-warp:warp;
+                }
+          }
     </style>
 </head>
 <body>
-<h3 style="text-align:center;background-color:green;border-radius:5px;padding:5px;color:white" > Chi Tiết Sản Phẩm</h3>
-
+<h3 style="text-align:center;background-color:red;border-radius:5px;padding:5px;color:white" > Chi Tiết Sản Phẩm</h3>
+<button class="btn btn-primary" onclick="backHomepage()">Back Homepage</button>
 <div id="productDetails" class="container"></div>
-<div class="flex-container">
+<div id="2btn" class="flex-container">
     <button id="show" class="btn" >Mua Ngay</button>
     <button onclick="muaOnline" id="muaOnline" class="btn">Thanh Toán Online</button>
 </div>
@@ -280,6 +290,10 @@ function xacNhanCk(){
  alert("Chúng tôi sẽ kiểm tra và xác nhận đơn hàng với bạn khi nhận được tiền");
  div1.style.visibility = 'hidden';
 }
+function backHomepage(){
+    window.location.href="/";
+    console.log("backHome")
+  }
 
 
 

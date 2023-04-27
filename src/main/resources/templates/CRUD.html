@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Thêm sản phẩm</title>
+    <title>CRUD</title>
     <link rel="icon" type="image/x-icon" href="https://scontent.xx.fbcdn.net/v/t1.15752-9/329760136_495322139346198_6412973535947348003_n.png?stp=cp0_dst-png&_nc_cat=102&ccb=1-7&_nc_sid=aee45a&_nc_ohc=N7Wb25Hw448AX_ZX_Fe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQELbUniDrEixWoqLM2_y88OwVGquT--EW7YAStAaZyCg&oe=640D48A7">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -12,13 +12,38 @@
       width:50px;
       height:50px;
     }
+    #my-menu {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    }
   </style>
 </head>
 <body>
+<nav id="my-menu" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/CRUDadm2002">Admin panel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/CRUDadm2002">Create product <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listSp">List product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Orderadmin1186">List Order</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
 <div class="container mt-5">
     <h1 class="text-center mb-5">Thêm sản phẩm</h1>
     <button class="btn btn-primary" onclick="backHomepage()">Back Homepage</button>
-    <button class="btn btn-success" onclick="danhSachOrder()" >Danh sách order</button>
     <form action="https://63e1d6414324b12d963f5108.mockapi.io/api/v11/laptop" method="post">
         <div class="form-group">
             <label for="name">Tên sản phẩm:</label>
@@ -38,20 +63,6 @@
         </div>
         <button onclick="themSanPham()" type="submit" class="btn btn-primary">Thêm sản phẩm</button>
     </form>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Mã SP</th>
-            <th>Tên</th>
-            <th>Giá</th>
-            <th>Mô Tả SP</th>
-            <th>Ảnh SP</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody id="employee-table">
-        </tbody>
-    </table>
 
 </div>
 <script>
@@ -63,52 +74,7 @@
     window.location.href="/Orderadmin1186";
     console.log("order")
   }
-  const apiUrl = "https://63e1d6414324b12d963f5108.mockapi.io/api/v11/laptop"; // URL của API chứa danh sách nhân viên
-  const employeeTable = document.querySelector("#employee-table");
 
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      data.forEach((employee) => {
-        const { id,name, price, description, image } = employee;
-        const employeeRow = `
-          <tr>
-            <td>${id}</td>
-            <td>${name}</td>
-            <td>${price}</td>
-            <td>${description}</td>
-            <td><img src=${image} alt="image"/></td>
-            <td>
-                  <button class="btn btn-danger btn-sm" onclick="deleteEmployee(${id})">Xóa</button>
-            </td>
-          </tr>
-        `;
-        employeeTable.innerHTML += employeeRow;
-      });
-    })
-    .catch(error => {
-      console.error("Có lỗi xảy ra khi tải dữ liệu:", error);
-    });
-
-  function deleteEmployee(idlaptop) {
-    if (confirm(`Bạn có chắc chắn muốn xóa sản phẩm với mã là ${idlaptop} không?`)) {
-      fetch(apiUrl+'/'+idlaptop, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ idlaptop })
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log("Nhân viên đã được xóa thành công:", data);
-          location.reload();
-        })
-        .catch(error => {
-          console.log("Có lỗi xảy ra khi xóa nhân viên:", error);
-        });
-    }
-  }
  const getFormData = () => {
   const form = document.querySelector("form");
   const name = document.getElementById("name").value;
