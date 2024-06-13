@@ -25,6 +25,12 @@ public class HomeController {
         return "Login";
     }
 
+    @GetMapping("/dashbroad")
+    public String Dashbroad() {
+        //Trả về trang index.html (trang chủ)
+        return "dashbroad";
+    }
+
     @GetMapping("/CRUDadm2002")
     public String CRUDpage() {
         //Trả về trang index.html (trang chủ)

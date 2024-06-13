@@ -67,7 +67,7 @@
             const myTimeout1 = setTimeout(moTrangadmin,500);
           }
           function moTrangadmin(){
-            window.location.href="/CRUDadm2002";
+            window.location.href="/dashbroad";
           }
 
         }
